@@ -24,7 +24,9 @@ except:
     sys.exit("Something went wrong when trying to login to instagram. Please try again and check your credentials")
 
 # Go to the notification list
-notifications = client.get_recent_activity()
+inbox = client.direct_pending_inbox()
+notifications = inbox["pending"]
+
 
 # Filter and get the new followers
 new_followers = [n for n in notifications if n.type == 'follow']
