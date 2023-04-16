@@ -31,7 +31,9 @@ for ID in myFollowerId:
     myfollowernames.append(myfollowername)
 
 # get the user ID of the target user
-target_username = "dasantha_td"
+target_username = input("Enter the target username: ")
+if not target_username:
+    sys.exit("Please enter the target username!")
 user_id = client.user_id_from_username(target_username)
 
 # get the list of followers of the target user
